@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalogue with Filters</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Dynamic Product Catalogue</h1>
+    </header>
+
+    <main class="container">
+        
+        <aside class="sidebar">
+            <h2>Filter Products</h2>
+
+            <div class="filter-group">
+                <h3>Category</h3>
+                <label><input type="checkbox" data-filter="category" value="Electronics"> Electronics (3)</label>
+                <label><input type="checkbox" data-filter="category" value="Apparel"> Apparel (3)</label>
+                <label><input type="checkbox" data-filter="category" value="Books"> Books (2)</label>
+            </div>
+            
+            <div class="filter-group">
+                <h3>Price Max</h3>
+                <input type="range" id="price-range" min="10" max="500" value="500">
+                <p>Max Price: $<span id="price-value">500</span></p>
+            </div>
+
+            <div class="filter-group">
+                <h3>In Stock</h3>
+                <label><input type="checkbox" id="in-stock-filter"> Show Only In Stock</label>
+            </div>
+
+            <button onclick="clearAllFilters()">Clear All Filters</button>
+        </aside>
+
+        <section class="product-grid" id="product-grid">
+            <p id="loading-message">Loading products...</p>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
